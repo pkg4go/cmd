@@ -4,37 +4,37 @@ import "strconv"
 import "errors"
 
 // args: value, precision(only for float)
-func String(args ...interface{}) (string, error) {
+func String(args ...interface{}) string {
 	value := args[0]
 	var precision int = 12 // default
 
 	switch value.(type) {
 	case string:
 		v, _ := value.(string)
-		return v, nil
+		return v
 	case int:
 		v, _ := value.(int)
-		return strconv.Itoa(v), nil
+		return strconv.Itoa(v)
 	case int32:
 		v, _ := value.(int32)
-		return strconv.FormatInt(int64(v), 10), nil
+		return strconv.FormatInt(int64(v), 10)
 	case int64:
 		v, _ := value.(int64)
-		return strconv.FormatInt(v, 10), nil
+		return strconv.FormatInt(v, 10)
 	case float32:
 		v, _ := value.(float32)
 		if len(args) >= 2 {
 			precision = args[1].(int)
 		}
-		return strconv.FormatFloat(float64(v), 'f', precision, 64), nil
+		return strconv.FormatFloat(float64(v), 'f', precision, 64)
 	case float64:
 		v, _ := value.(float64)
 		if len(args) >= 2 {
 			precision = args[1].(int)
 		}
-		return strconv.FormatFloat(v, 'f', precision, 64), nil
+		return strconv.FormatFloat(v, 'f', precision, 64)
 	default:
-		return "", errors.New("unknown type")
+		return ""
 	}
 }
 
@@ -93,7 +93,7 @@ func Int64(value interface{}) (int64, error) {
 	switch value.(type) {
 	case string:
 		v, _ := value.(string)
-		return strconv.ParseInt(v, 10, 32)
+		return strconv.ParseInt(v, 10, 64)
 	case int:
 		v, _ := value.(int)
 		return int64(v), nil

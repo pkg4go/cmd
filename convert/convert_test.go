@@ -7,37 +7,37 @@ import "testing"
 
 func TestConvertStringToString(t *testing.T) {
 	var in string = "123456"
-	result, _ := String(in)
+	result := String(in)
 	assert.Equal(result, "123456")
 }
 
 func TestConvertIntToString(t *testing.T) {
 	var in int = 10086
-	result, _ := String(in)
+	result := String(in)
 	assert.Equal(result, "10086")
 }
 
 func TestConvertInt32ToString(t *testing.T) {
 	var in int32 = 12345
-	result, _ := String(in)
+	result := String(in)
 	assert.Equal(result, "12345")
 }
 
 func TestConvertInt64ToString(t *testing.T) {
 	var in int64 = 1258096
-	result, _ := String(in)
+	result := String(in)
 	assert.Equal(result, "1258096")
 }
 
 func TestConvertFloat32ToString(t *testing.T) {
 	var in float32 = 123.321
-	result, _ := String(in, 3)
+	result := String(in, 3)
 	assert.Equal(result, "123.321")
 }
 
 func TestConvertFloat64ToString(t *testing.T) {
 	var in float64 = 1234567.7654321
-	result, _ := String(in, 7)
+	result := String(in, 7)
 	assert.Equal(result, "1234567.7654321")
 }
 

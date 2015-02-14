@@ -8,3 +8,9 @@ func Equal(a, b interface{}) {
 		panic(fmt.Errorf("expect %v to equal %v", a, b))
 	}
 }
+
+func NotEqual(a, b interface{}) {
+	if reflect.DeepEqual(a, b) {
+		panic(fmt.Errorf("expect %v to equal %v", a, b))
+	}
+}

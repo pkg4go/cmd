@@ -9,4 +9,8 @@ func TestRun(t *testing.T) {
 	assert.Equal(err, nil)
 	assert.Equal(strings.Contains(out, "command.go"), true)
 	assert.Equal(strings.Contains(out, "command_test.go"), true)
+
+	out, err = Run("xxoo")
+	assert.NotEqual(err, nil)
+	assert.NotEqual(out, "")
 }

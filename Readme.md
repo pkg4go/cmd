@@ -12,6 +12,8 @@
 
   ~~- [convert](http://godoc.org/github.com/pkg4go/pkgs/convert)~~ Split to [pkg4go/convert](https://github.com/pkg4go/convert)
 
+  ~~- [fs](http://godoc.org/github.com/pkg4go/pkgs/fs)~~ Split to [pkg4go/fs](https://github.com/pkg4go/fs)
+
   ~~- [path](http://godoc.org/github.com/pkg4go/pkgs/path)~~ Split to [pkg4go/pathx](https://github.com/pkg4go/pathx)
 
 ### License
